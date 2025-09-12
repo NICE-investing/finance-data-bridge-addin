@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finance Data Bridge</title>
+    <link rel="stylesheet" href="taskpane.css">
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Finance Data Bridge</h1>
+        </header>
+        
+        <main>
+            <!-- 탭 네비게이션 -->
+            <div class="tab-navigation">
+                <button class="tab-button active" data-tab="upload">계정 업로드</button>
+                <button class="tab-button" data-tab="validate">DSL 확인</button>
+            </div>
+            
+            <!-- 계정 업로드 탭 -->
+            <div id="upload-tab" class="tab-content active">
+                <h2>계정 데이터 업로드</h2>
+                
+                <div class="form-group">
+                    <label>데이터 범위 선택</label>
+                    <button id="select-range" class="btn btn-secondary">범위 선택</button>
+                    <div id="selected-range" class="info-text"></div>
+                </div>
+                
+                <button id="upload-btn" class="btn btn-primary">업로드</button>
+                
+                <div id="upload-result" class="result-area"></div>
+            </div>
+            
+            <!-- DSL 확인 탭 -->
+            <div id="validate-tab" class="tab-content">
+                <h2>DSL 구문 확인</h2>
+                
+                <div class="form-group">
+                    <label for="dsl-input">DSL 수식</label>
+                    <textarea id="dsl-input" rows="5" placeholder="예: @100000 + @200000[-1y]"></textarea>
+                </div>
+                
+                <button id="validate-btn" class="btn btn-primary">검증</button>
+                
+                <div id="validate-result" class="result-area"></div>
+            </div>
+        </main>
+        
+        <!-- 설정 섹션 -->
+        <footer>
+            <details>
+                <summary>API 설정</summary>
+                <div class="form-group">
+                    <label for="api-url">API 서버 URL</label>
+                    <input type="text" id="api-url" value="http://localhost:3000" placeholder="https://api.example.com">
+                    <button id="save-settings" class="btn btn-small">저장</button>
+                </div>
+            </details>
+        </footer>
+    </div>
+    
+    <script src="taskpane.js"></script>
+</body>
+</html>

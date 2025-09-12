@@ -1,0 +1,10 @@
+title: Finance Data Bridge Excel Add-in
+description: Excel 웹 추가기능을 위한 정적 파일들
+plugins: []
+exclude:
+  - README.md
+include:
+  - "*.html"
+  - "*.css"
+  - "*.js"
+  - "*.png"
